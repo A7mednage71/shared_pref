@@ -1,19 +1,19 @@
-class UserModel {
+class USerModel {
   String? secName;
   int? age;
-  UserModel({
-    this.secName,
-    this.age,
+  USerModel({
+    required this.secName,
+    required this.age,
   });
 
-  UserModel.fromJSON(Map<dynamic, dynamic> mp) {
-    secName = mp['secName'];
-    age = mp['age'];
+  USerModel.fromjson(Map<dynamic, dynamic> map) {
+    secName = map['secName'];
+    age = map['age'];
   }
 
-  toJSON() {
+  ToJSON() {
     return {
-      'secName': secName, // key : value
+      'secName': secName,
       'age': age,
     };
   }
