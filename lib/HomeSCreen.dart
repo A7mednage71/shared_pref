@@ -32,11 +32,9 @@ class _HomePageState extends State<HomePage> {
     name = sharedPreference.getString('Name') ?? 'USerName';
     phone = sharedPreference.getInt('Phone') ?? 555;
 
-    var model = sharedPreference.getString('UserModel');
-
-    UserModel userModel =
-        model == null ? UserModel() : UserModel.fromJSON(json.decode(model));
-  
+    var model = sharedPreference.getString('USerModel');
+    USerModel usermodel =
+        model == null ? USerModel() : USerModel.fromjson(json.decode(model));
   }
 
   @override
@@ -131,17 +129,12 @@ class _HomePageState extends State<HomePage> {
     sharedPreference.setString('Name', name);
     sharedPreference.setInt('phone', phone);
 
-    sharedPreference.setString(
-      //store instance of UserModel // object لازم تعمل انكود للاوبجكت علشان يتخزن ك استرنج
-      'UserModel',
-      json.encode(
-        UserModel(age: 50, secName: 'nageh').toJSON(),
-      ),
-    );
+    sharedPreference.setString('USerModel',
+        json.encode(USerModel(age: 100, secName: 'salama').ToJSON()));
 
     print(sharedPreference.getString('Name'));
     print(sharedPreference.getInt('phone'));
-    print(sharedPreference.getString('UserModel'));
+    print(sharedPreference.getString('USerModel'));
   }
 
   DeleteData() async {
